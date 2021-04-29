@@ -13,13 +13,13 @@ public class Phonebook {
       throw new IllegalArgumentException("Parameter must be not null!");
     }
     try (BufferedWriter writer = Files.newBufferedWriter(Path.of(output))) {
-      writeDatasToFile(contacts, writer);
+      writeDataToFile(contacts, writer);
     } catch (IOException ioe) {
       throw new IllegalArgumentException("Cannot write file!", ioe);
     }
   }
 
-  private void writeDatasToFile(Map<String, String> contacts, BufferedWriter writer) throws IOException {
+  private void writeDataToFile(Map<String, String> contacts, BufferedWriter writer) throws IOException {
     for (Map.Entry<String, String> entry : contacts.entrySet()) {
       String name = entry.getKey();
       String phoneNumber = entry.getValue();
